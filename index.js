@@ -186,10 +186,12 @@ for (let blackfriday =1; blackfriday <=10;blackfriday++){
 //     خزّن الناتج في متغير total واطبعه بالنهاية
 
 // --- حل السؤال 10 هنا ---
-for (let ahmed =1; ahmed <=100;ahmed++){
-    let total = ahmed;
-    console.log(total);
+let total=0
+for (let i =1; i <=100;i++){
+    total+=i;
+    
     }
+console.log(total);
 
 
 
