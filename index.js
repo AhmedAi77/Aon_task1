@@ -8,13 +8,28 @@
 
 // --- حل السؤال 1 هنا ---
 
-
+let a= 10;
+let b= 20;
+console.log(a+b);
 
 // 2) عندك متغير minutes.
 //    حوّله إلى ثواني (seconds) واطبع الناتج.
 //    مثال: إذا minutes = 5 الناتج = 300
 
 // --- حل السؤال 2 هنا ---
+//
+
+ function MinutesConvert(minutes){
+return minutes * 60
+
+}
+let answer2= MinutesConvert(5)
+console.log(answer2);
+
+
+
+
+
 
 
 
@@ -24,6 +39,11 @@
 
 // --- حل السؤال 3 هنا ---
 
+function square(Number){
+    return Number * Number
+}
+let answer3 = square(4)
+console.log(answer3);
 
 
 // 4) اكتب دالة باسم maxOfTwo
@@ -34,11 +54,36 @@
 
 
 
+function maxOfTwo(a,b){
+    if (a > b ) {
+        return a
+
+    }
+    
+
+    else {
+        return b
+
+    }
+    
+}
+let answer4 = maxOfTwo(3,8)
+console.log(answer4);
+
+
 // 5) اكتب دالة باسم helloName
 //    تستقبل اسم وترجع نص: "Hello " مع الاسم.
 //    مثل: helloName("Ali") ترجع "Hello Ali"
 
 // --- حل السؤال 5 هنا ---
+function HelloName(name) {
+
+    return "hello " + name
+
+    
+}
+let answer5 = HelloName("Ali")
+console.log(answer5);
 
 
 
@@ -48,6 +93,18 @@
 
 // --- حل السؤال 6 هنا ---
 
+function OdeOrEven (num){
+    if (num % 2 === 0)
+    return "Even"
+
+
+    else {
+        return " Odd"
+    }
+}
+let answer6 =OdeOrEven(6)
+console.log(answer6);
+
 
 
 // 7) عندك متغير grade (0 – 100).
@@ -55,7 +112,26 @@
 //    غير ذلك اطبع "راسب"
 
 // --- حل السؤال 7 هنا ---
+function PassOrFail (grade){
 
+    if (grade < 0 || grade > 100)
+    {
+        return "must inter number from 1-100 0nly ;)"
+    
+    } 
+       else if (grade < 50){
+        return "بسار"
+    }
+    
+       else (grade <=100)
+    {
+        return "حجان";
+
+    }
+    
+}
+let answer7 = PassOrFail(49)
+console.log(answer7);
 
 
 // 8) عندك متغير score.
@@ -66,6 +142,32 @@
 //    أقل من 60   → "ضعيف"
 
 // --- حل السؤال 8 هنا ---
+function GradeScore (score){
+
+    if (score > 100 || score < 0){
+         return "invalid number must be btween 0-100"
+    }
+ 
+     else if (score >= 90 && score <=100){
+         return "exlent"
+     }
+ 
+      else if (score >= 75 && score <=89){
+         return "very good"
+     }
+     else  if (score >= 60 && score <=74){
+         return "good"
+     }
+    else if (score <= 60 ){
+         return "weak"
+     }
+     else if (score > 100 || score < 0){
+         return "invalid number must be btween 0-100"
+     }
+ }
+ let answer8 =GradeScore(101)
+ console.log(answer8);
+
 
 
 
@@ -73,6 +175,10 @@
 //    كل رقم بسطر واحد باستخدام console.log
 
 // --- حل السؤال 9 هنا ---
+for (let blackfriday =1; blackfriday <=10;blackfriday++){
+    console.log(blackfriday);
+    }
+
 
 
 
@@ -80,6 +186,10 @@
 //     خزّن الناتج في متغير total واطبعه بالنهاية
 
 // --- حل السؤال 10 هنا ---
+for (let ahmed =1; ahmed <=100;ahmed++){
+    let total = ahmed;
+    console.log(total);
+    }
 
 
 
@@ -89,6 +199,16 @@
 //     وخزّن العدد في متغير count ثم اطبعه
 
 // --- حل السؤال 11 هنا ---
+let text = "hello world"
+count=0
+for(i in text){
+    if (text[i]==="l"){
+        count++;
+    }
+}  
+        console.log(count);
+    
+
 
 
 
@@ -97,6 +217,22 @@
 //     مثال: countEven(10) ترجع 5 (2,4,6,8,10)
 
 // --- حل السؤال 12 هنا ---
+function countEven(n){
+    let even = 0
+    for (let i = 1; i <= n; i++){
+        if (i%2===0){
+            even++;
+        }
+
+    }
+    console.log(even);
+
+ }
+    
+let answer12 =countEven(10)
+
+
+
 
 
 
@@ -105,6 +241,20 @@
 //     مثال: sumOdd(5) ترجع 9 (1 + 3 + 5)
 
 // --- حل السؤال 13 هنا ---
+function sumOdd (n){
+  let odd=0
+   for (let i = 1;i<=n;i++){
+    if (i % 2 !== 0){
+        odd+=i;
+
+    }
+   }
+   return odd
+}
+let answer13= sumOdd(5)
+console.log(answer13)
+
+
 
 
 
@@ -113,3 +263,13 @@
 //     مثال: factorial(5) = 1*2*3*4*5 = 120
 
 // --- حل السؤال 14 هنا ---
+function factorial(n){
+    let factor = 1;
+    for (let i = 1; i<= n;i++){
+        factor *=i;
+    }
+    return factor
+}
+let answer14=factorial(5
+)
+console.log(answer14);
