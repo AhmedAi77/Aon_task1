@@ -25,8 +25,22 @@ let nextId = 1;
 // }
 // ---------------------------------------
 function createStudent(name, age) {
-    // اكتب الكود هنا
+    let id = nextId;
+    nextId++;
+    const student = {
+        id: id,
+        name: name,
+        age: age,
+        grades: []
+    };
+   
+    return student;
 }
+// let s1 =createStudent("Ali", 20);
+// let s2 =createStudent("ahmed", 22);
+// let s3 =createStudent("mustafa", 19);
+// let s4 = (createStudent("haifa", 21));
+
 
 
 
@@ -35,8 +49,16 @@ function createStudent(name, age) {
 // دالة تضيف طالب إلى مصفوفة students
 // ---------------------------------------
 function addStudent(student) {
-    // اكتب الكود هنا
+    students.push(student);
+    return students;
+    
 }
+// addStudent(s1);
+// addStudent(s2);
+// addStudent(s3);
+// addStudent(s4);
+
+
 
 
 
@@ -46,8 +68,13 @@ function addStudent(student) {
 // تضيف الدرجة إلى student.grades
 // ---------------------------------------
 function addGrade(student, grade) {
-    // اكتب الكود هنا
+    student.grades.push(grade);
 }
+// addGrade(s1, 80);
+// addGrade(s1, 44)
+// addGrade(s1, 70)
+// addGrade(s1, 33)
+
 
 
 
@@ -59,8 +86,18 @@ function addGrade(student, grade) {
 // وترجع sum / عدد الدرجات
 // ---------------------------------------
 function getAverage(student) {
-    // اكتب الكود هنا
+    let sum = 0;
+    for ( let i = 0; i< student.grades.length; i++) {
+        sum += student.grades[i];
+        
 }
+if (student.grades.length === 0) {
+    return 0;
+}    else {
+     return sum / student.grades.length;
+}   
+}
+
 
 
 
@@ -72,8 +109,14 @@ function getAverage(student) {
 // غير ذلك → "راسب"
 // ---------------------------------------
 function getStatus(student) {
-    // اكتب الكود هنا
+    if (getAverage(student) >= 50) {
+        return "ناجح";
+    } else {
+        return "راسب";
+    }
 }
+
+
 
 
 
@@ -89,8 +132,24 @@ function getStatus(student) {
 // إذا ماكو درجات تطبع: Grades: لا توجد درجات بعد
 // ---------------------------------------
 function printStudentReport(student) {
-    // اكتب الكود هنا
+    console.log("student:#" + student.id + " - " + student.name + " (Age: " + student.age + ")");
+    
+    const avg = getAverage(student);
+    console.log("Average: " + avg);
+
+    if (student.grades.length === 0) {
+        return "Grades: لا توجد درجات بعد";
+    } else if (avg >= 50) {
+        console.log( "Status: ناجح");
+    } else {
+        console.log( "Status: راسب")
+    }
 }
+
+    
+
+
+
 
 
 
@@ -102,8 +161,17 @@ function printStudentReport(student) {
 // وتستدعي printStudentReport لكل طالب
 // ---------------------------------------
 function printAllStudents() {
-    // اكتب الكود هنا
+    if (students.length === 0) {
+        return "لا يوجد طلاب حاليا";
+    } else {
+        for (let i =0; i<students.length; i++) {
+            printStudentReport(students[i]);
+        }
+    
 }
+}
+
+
 
 
 
@@ -114,8 +182,19 @@ function printAllStudents() {
 // إذا ما لقت ترجع undefined
 // ---------------------------------------
 function findStudentByName(name) {
-    // اكتب الكود هنا (اختياري)
+    for (let i = 0; i < students.length; i++) {
+        if (students[i].name === name) {
+            return students[i];
+        }
+    }
+    return undefined; 
 }
+
+    
+
+
+
+
 
 
 
@@ -146,5 +225,38 @@ function findStudentByName(name) {
 // printAllStudents();
 //
 // =======================================
+// const s1 = createStudent("Ali", 20);
+// const s2 = createStudent("Sara", 22);
+// const s3 = createStudent("Noor", 19);
+console.log("========================↑↑↑↑Function bulding ↑↑↑↑↑↑↑↑=============================");
+console.log("========================↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑=============================");
+console.log("====================main app using finction====================");
+let student1 = createStudent("Ali", 20);
+let student2 = createStudent("Sara", 22);
+let student3 = createStudent("Noor", 19);
+addStudent(student1);
+addStudent(student2);
+addStudent(student3);
 
-// اكتب كود التنفيذ هنا:
+addGrade(student1, 80);
+addGrade(student1, 90);
+addGrade(student1, 75); 
+
+addGrade(student2, 60);
+addGrade(student2, 70);     
+addGrade(student2, 80);
+
+addGrade(student3, 40);
+addGrade(student3, 50);
+addGrade(student3, 30);
+
+printAllStudents();
+
+console.log("=================================findStudentByName sara====================");
+
+
+console.log(findStudentByName("Sara"));
+
+console.log("=================================printStudentReport student1====================");
+
+printStudentReport(student1);
